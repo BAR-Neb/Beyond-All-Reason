@@ -62,6 +62,10 @@ local unitDefCanWearHats = {
 	[UnitDefNames.armdecom.id] = true,
 }
 
+local champion = {     -- Fight Night 1v1 Winner
+	["[DME]Flying_Duck"] = true,
+}
+
 local vikings = {
 	["Raghna"] = true,
 	["Malady"] = true,
@@ -92,6 +96,11 @@ function gadget:GameFrame(gf)
 					local unitPosX, unitPosY, unitPosZ = Spring.GetUnitPosition(unitID)
 
 					if unitDefCanWearHats[unitDefID] then
+						if champion[playerName] and UnitDefNames['cor_hat_fightnight'] then
+							local hatDefID = UnitDefNames['cor_hat_fightnight'].id
+							local unitID = Spring.CreateUnit(hatDefID, unitPosX, unitPosY, unitPosZ, 0, teamID)
+							gadget:UnitGiven(unitID, hatDefID, teamID)
+						end
 						if vikings[playerName] and UnitDefNames['cor_hat_viking'] then
 							local hatDefID = UnitDefNames['cor_hat_viking'].id
 							local unitID = Spring.CreateUnit(hatDefID, unitPosX, unitPosY, unitPosZ, 0, teamID)
