@@ -1189,6 +1189,12 @@ function UnitDef_Post(name, uDef)
 	end
 
 
+	-- Air Rework 2.0
+	if modOptions.air_rework_2 == true then
+		local airRework2Units = VFS.Include("unitbasedefs/air_rework_2_defs.lua")
+		uDef = airRework2Units.airRework2Tweaks(name, uDef)
+	end
+	
 	--Air rework
 	if modOptions.air_rework == true then
 		local airReworkUnits = VFS.Include("unitbasedefs/air_rework_defs.lua")

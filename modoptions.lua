@@ -1442,6 +1442,16 @@ local options = {
     },
 
     {
+        key 	= "air_rework_2",
+        name 	= "Air Rework 2.0",
+        desc 	= "Prototype version with more maneuverable, faster air units and more differentiation between them.",
+        hidden 	= false,
+        type 	= "bool",
+        section = "options_experimental",
+        def 	= false,
+    },
+
+    {
         key 	= "skyshift",
         name 	= "Skyshift: Air Rework",
         desc 	= "A complete overhaul of air units and mechanics",
